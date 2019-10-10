@@ -19,7 +19,6 @@ Unsigned char tmpC = 0x00;
 
     /* Insert your solution below */
     while (1) {
-	tmpB = (PINA&0x70);
 	tmpA = (PINA&0x0F);
 	tmpC = 0x00;
 if(tmpA == 13 || tmpA == 14 || tmp A = 15){
@@ -45,10 +44,6 @@ else{
 }
 if(tmp A <= 4){
 	tmpC = tmpC | 0x40;
-}
-tmpB = tmpB >> 4;
-if(tmpB == 3){
-	tmpC = tmpC | 0x80; ///ors it with b10000 0000
 }
 PORTC = tmpC;
     }
