@@ -1,7 +1,7 @@
-/*	Author: dpere048
+/*	Author: David Perez dpere048@ucr.edu
  *  Partner(s) Name: 
- *	Lab Section:
- *	Assignment: Lab #  Exercise #
+ *	Lab Section: 022
+ *	Assignment: Lab3 #  Exercise3 #
  *	Exercise Description: [optional - include for your own benefit]
  *
  *	I acknowledge all content contained herein, excluding template or example
