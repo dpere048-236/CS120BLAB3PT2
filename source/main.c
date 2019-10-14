@@ -14,21 +14,25 @@
 
 int main(void) {
     /* Insert DDR and PORT initializations */
-Unsigned char tmpA = 0x00;
-Unsigned char tmpC = 0x00;
 
+DDRA = 0x00; PORTA = 0xFF;
+DDRB = 0x00; PORTB = 0xFF;
+DDRC = 0xFF; PORTC = 0x00;
+unsigned char tmpA = 0x00;
+unsigned char tmpC = 0x00;
+unsigned char tmpB = 0x00;
     /* Insert your solution below */
     while (1) {
 	tmpB = (PINA&0x70);
 	tmpA = (PINA&0x0F);
 	tmpC = 0x00;
-if(tmpA == 13 || tmpA == 14 || tmp A = 15){
+if(tmpA == 13 || tmpA == 14 || tmpA == 15){
 	tmpC = 0x3F;
 }
-else if(tmpA == 10 || tmpA == 11 || tmpA ==12){
+else if(tmpA == 10 || tmpA == 11 || tmpA == 12){
 	tmpC = 0x3E;
 }
-else if(tmpA == 7 || tmpA == 8 || tmpA = 9){
+else if(tmpA == 7 || tmpA == 8 || tmpA == 9){
 	tmpC = 0x3C;
 }
 else if(tmpA == 5 || tmpA == 6){
@@ -38,19 +42,19 @@ else if(tmpA == 3 || tmpA == 4){
 	tmpC = 0x30;
 }
 else if(tmpA == 1 || tmpA == 2){
-	tmpC = 0x20;}
+	tmpC = 0x20;
 }
 else{
 	tmpC = 0;
 }
-if(tmp A <= 4){
+if(tmpA <= 4){
 	tmpC = tmpC | 0x40;
 }
 tmpB = tmpB >> 4;
 if(tmpB == 3){
 	tmpC = tmpC | 0x80; ///ors it with b10000 0000
 }
+}
 PORTC = tmpC;
-    }
-    return 1;
+return 0;
 }
