@@ -23,8 +23,8 @@ unsigned char tmpC = 0x00;
 unsigned char tmpB = 0x00;
     /* Insert your solution below */
     while (1) {
-	tmpB = (PINA&0x70);
-	tmpA = (PINA&0x0F);
+	tmpB = (PINA&0x70); //0111 0000
+	tmpA = (PINA&0x0F); //0000 1111
 	tmpC = 0x00;
 if(tmpA == 13 || tmpA == 14 || tmpA == 15){
 	tmpC = 0x3F;
@@ -48,13 +48,15 @@ else{
 	tmpC = 0;
 }
 if(tmpA <= 4){
-	tmpC = tmpC | 0x40;
+	tmpC = tmpC | 0x40; //ors it with b0100 0000
 }
-tmpB = tmpB >> 4;
+//END OF PART 2
+///
+tmpB = tmpB >> 4;//0100 0000
 if(tmpB == 3){
-	tmpC = tmpC | 0x80; ///ors it with b10000 0000
-}
+	tmpC = tmpC | 0x80; //ORS with b1000 0000  INDICATING NO SEATBELT
 }
 PORTC = tmpC;
+}
 return 0;
 }

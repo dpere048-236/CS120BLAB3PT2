@@ -50,26 +50,31 @@ test "PINA: 0x06  => PORTC: 0x38 "
 setPINA 0x06
 continue 5
 expectPORTC 0x38
-checkResult9
+checkResult
 
-test "PINA: 0x04  => PORTC: 0x30 "
+test "PINA: 0x04  => PORTC: 0x70 "
 setPINA 0x04
 continue 5
-expectPORTC 0x30
+expectPORTC 0x70
 checkResult
 
-test "PINA: 0x01  => PORTC: 0x20 "
+test "PINA: 0x01  => PORTC: 0x60 "
 setPINA 0x01
 continue 5
-expectPORTC 0x20
+expectPORTC 0x60
 checkResult
 
-test "PINA: 0x31 => PORTC: 0xA0"
-setPINA 0x31
+test "PINA: 0x36 => PORTC: 0xB8"
+setPINA 0x36
 continue 5
-expectPORTC 0xA0
+expectPORTC 0xB8
 checkResult
 
+test "PINA: 0x76 => PORTC: 0x38"
+setPINA 0x76
+continue 5
+expectPORTC 0x38
+checkResult
 # Report on how many tests passed/tests ran
 set $passed=$tests-$failed
 eval "shell echo Passed %d/%d tests.\n",$passed,$tests
